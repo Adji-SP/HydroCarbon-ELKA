@@ -1,0 +1,8 @@
+/hello-world/target
+**/*.rs.bk
+/out
+/log
+/data.txt
+/data_proc.csv
+/data_raw.csv
+/hello-world/firmware.hex
