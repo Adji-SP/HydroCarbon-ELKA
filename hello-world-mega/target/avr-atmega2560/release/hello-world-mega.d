@@ -1,0 +1,1 @@
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\release\hello-world-mega: D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\src\filter.rs D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\src\main.rs D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\src\sensor.rs

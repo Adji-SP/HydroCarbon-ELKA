@@ -1,0 +1,65 @@
+
+thread 'rustc' (46776) panicked at /rustc-dev/c935696dd07ca51e6fba2f6579919eea2a50863b/compiler\rustc_codegen_ssa\src\back\metadata.rs:373:17:
+/rustc-dev/c935696dd07ca51e6fba2f6579919eea2a50863b/compiler\rustc_codegen_ssa\src\back\metadata.rs:373:17: AVR CPU not explicitly specified
+stack backtrace:
+   0:     0x7ffc9a20833e - std::backtrace_rs::backtrace::win64::trace
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\..\..\backtrace\src\backtrace\win64.rs:85
+   1:     0x7ffc9a20833e - std::backtrace_rs::backtrace::trace_unsynchronized
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\..\..\backtrace\src\backtrace\mod.rs:66
+   2:     0x7ffc9a20833e - std::sys::backtrace::_print_fmt
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\sys\backtrace.rs:74
+   3:     0x7ffc9a20833e - std::sys::backtrace::impl$0::print::impl$0::fmt
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\sys\backtrace.rs:44
+   4:     0x7ffc9a22ffb1 - core::fmt::write
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\core\src\fmt\mod.rs:0
+   5:     0x7ffc9a218714 - std::io::default_write_fmt
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\io\mod.rs:621
+   6:     0x7ffc9a218714 - std::io::Write::write_fmt<std::sys::stdio::windows::Stderr>
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\io\mod.rs:1976
+   7:     0x7ffc9a1e13e9 - std::sys::backtrace::BacktraceLock::print
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\sys\backtrace.rs:47
+   8:     0x7ffc9a1e13e9 - std::panicking::default_hook::closure$0
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\panicking.rs:292
+   9:     0x7ffc9a1fb9a8 - std::panicking::default_hook
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\panicking.rs:319
+  10:     0x7ffc9b9822fb - core[73441d774e3b0ef8]::slice::sort::unstable::heapsort::heapsort::<((rustc_lint_defs[6d1e5df99971e11e]::Level, &str), usize), <((rustc_lint_defs[6d1e5df99971e11e]::Level, &str), usize) as core[73441d774e3b0ef8]::cmp::PartialOrd>::lt>
+  11:     0x7ffc9a1fbca4 - std::panicking::panic_with_hook
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\panicking.rs:833
+  12:     0x7ffc9dfc958f - <rustc_data_structures[64e6a669780bfc0e]::profiling::SelfProfilerRef>::exec::cold_call::<<rustc_data_structures[64e6a669780bfc0e]::profiling::SelfProfilerRef>::incr_result_hashing::{closure#0}>
+  13:     0x7ffc9dfae1a9 - std[a683cec43ea004de]::sys::backtrace::__rust_end_short_backtrace::<std[a683cec43ea004de]::panicking::begin_panic<alloc[43d339ee8ccee2b6]::string::String>::{closure#0}, !>
+  14:     0x7ffc9dfad879 - std[a683cec43ea004de]::panicking::begin_panic::<alloc[43d339ee8ccee2b6]::string::String>
+  15:     0x7ffc9dfc9b46 - <rustc_data_structures[64e6a669780bfc0e]::profiling::SelfProfilerRef>::exec::cold_call::<<rustc_data_structures[64e6a669780bfc0e]::profiling::SelfProfilerRef>::incr_result_hashing::{closure#0}>
+  16:     0x7ffc9dfc9bc5 - <rustc_data_structures[64e6a669780bfc0e]::profiling::SelfProfilerRef>::exec::cold_call::<<rustc_data_structures[64e6a669780bfc0e]::profiling::SelfProfilerRef>::incr_result_hashing::{closure#0}>
+  17:     0x7ffc9dfb6756 - core[73441d774e3b0ef8]::slice::sort::unstable::ipnsort::<(<rustc_middle[fe7991664764f3d5]::mono::CodegenUnit>::items_in_deterministic_order::ItemSortKey, usize), <(<rustc_middle[fe7991664764f3d5]::mono::CodegenUnit>::items_in_deterministic_order::ItemSortKey, usize) as core[73441d774e3b0ef8]::cmp::PartialOrd>::lt>
+  18:     0x7ffc9e0122a6 - rustc_middle[fe7991664764f3d5]::util::bug::bug_fmt
+  19:     0x7ffc99deb5f2 - rustc_codegen_ssa[b8158b514f9ca82f]::back::write::desc
+  20:     0x7ffc99debbf0 - rustc_codegen_ssa[b8158b514f9ca82f]::back::write::desc
+  21:     0x7ffc99ded430 - rustc_codegen_ssa[b8158b514f9ca82f]::back::metadata::search_for_section
+  22:     0x7ffc99de855b - rustc_codegen_ssa[b8158b514f9ca82f]::back::link::linker_and_flavor
+  23:     0x7ffc99dbd700 - rustc_codegen_ssa[b8158b514f9ca82f]::back::link::link_binary
+  24:     0x7ffc97632902 - <rustc_codegen_llvm[1114d56b0e0bb13]::LlvmCodegenBackend as rustc_codegen_ssa[b8158b514f9ca82f]::traits::backend::CodegenBackend>::link
+  25:     0x7ffc97587836 - <rustc_interface[5d7d56bfd3ec487]::queries::Linker>::link
+  26:     0x7ffc9752ec18 - std[a683cec43ea004de]::sys::backtrace::__rust_begin_short_backtrace::<std[a683cec43ea004de]::thread::lifecycle::spawn_unchecked<ctrlc[2d778605277944be]::set_handler_inner<rustc_driver_impl[2dc10a3c27ac95c1]::install_ctrlc_handler::{closure#0}>::{closure#0}, ()>::{closure#1}::{closure#0}::{closure#0}, ()>
+  27:     0x7ffc97526ef1 - RINvNtNtCseilZIBLlKgs_3std3sys9backtrace28___rust_begin_short_backtraceNCNCINvNtCsv6mIUoO7it_15rustc_interface4util26run_in_thread_with_globalsNCINvB1e_31run_in_thread_pool_with_globalsNCINvNtB1g_9interface12run_compileruNCNvCs3VxXKeCnfYj_17rustc_driver_im
+  28:     0x7ffc97533707 - std[a683cec43ea004de]::sys::backtrace::__rust_begin_short_backtrace::<std[a683cec43ea004de]::thread::lifecycle::spawn_unchecked<ctrlc[2d778605277944be]::set_handler_inner<rustc_driver_impl[2dc10a3c27ac95c1]::install_ctrlc_handler::{closure#0}>::{closure#0}, ()>::{closure#1}::{closure#0}::{closure#0}, ()>
+  29:     0x7ffc9a20550a - std::sys::thread::windows::impl$0::new::thread_start
+                               at /rustc/c935696dd07ca51e6fba2f6579919eea2a50863b/library\std\src\sys\thread\windows.rs:58
+  30:     0x7ffdee517374 - BaseThreadInitThunk
+  31:     0x7ffdeeadcc91 - RtlUserThreadStart
+
+error: the compiler unexpectedly panicked. This is a bug
+
+note: we would appreciate a bug report: https://github.com/rust-lang/rust/issues/new?labels=C-bug%2C+I-ICE%2C+T-compiler&template=ice.md
+
+note: please make sure that you have updated to the latest nightly
+
+note: please attach the file at `C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\bare-metal-1.0.0\rustc-ice-2026-04-30T10_52_13-39492.txt` to your bug report
+
+note: rustc 1.97.0-nightly (c935696dd 2026-04-29) running on x86_64-pc-windows-msvc
+
+note: compiler flags: --crate-type lib -C opt-level=s -C panic=abort -C linker-plugin-lto -C codegen-units=1 -C debuginfo=2 -Z unstable-options -Z unstable-options -C opt-level=s
+
+note: some of the compiler flags provided by cargo are hidden
+
+query stack during panic:
+end of query stack

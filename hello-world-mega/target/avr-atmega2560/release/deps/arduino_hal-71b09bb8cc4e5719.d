@@ -1,0 +1,11 @@
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\release\deps\arduino_hal-71b09bb8cc4e5719.d: C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\lib.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\clock.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\delay.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\port\mod.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\port\mega.rs
+
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\release\deps\libarduino_hal-71b09bb8cc4e5719.rlib: C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\lib.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\clock.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\delay.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\port\mod.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\port\mega.rs
+
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\release\deps\libarduino_hal-71b09bb8cc4e5719.rmeta: C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\lib.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\clock.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\delay.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\port\mod.rs C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\port\mega.rs
+
+C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\lib.rs:
+C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\clock.rs:
+C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\delay.rs:
+C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\port\mod.rs:
+C:\Users\Karma\.cargo\git\checkouts\avr-hal-88cb7c7248a695f0\e5c8f37\arduino-hal\src\port\mega.rs:

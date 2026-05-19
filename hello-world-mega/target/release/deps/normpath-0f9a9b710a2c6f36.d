@@ -1,0 +1,11 @@
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\release\deps\normpath-0f9a9b710a2c6f36.d: C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\lib.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\base.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\cmp.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\error.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\windows\mod.rs
+
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\release\deps\libnormpath-0f9a9b710a2c6f36.rlib: C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\lib.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\base.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\cmp.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\error.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\windows\mod.rs
+
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\release\deps\libnormpath-0f9a9b710a2c6f36.rmeta: C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\lib.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\base.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\cmp.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\error.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\windows\mod.rs
+
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\lib.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\base.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\cmp.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\error.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\normpath-1.5.0\src\windows\mod.rs:

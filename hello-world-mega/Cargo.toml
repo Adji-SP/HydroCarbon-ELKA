@@ -1,0 +1,34 @@
+[package]
+name    = "hello-world-mega"
+version = "0.1.0"
+edition = "2021"
+
+# ---------------------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------------------
+[dependencies]
+# Arduino Mega (ATmega2560) HAL — avr-hal monorepo, atmega2560 feature.
+arduino-hal = { git = "https://github.com/Rahix/avr-hal", features = ["arduino-mega2560"] }
+
+# Minimal panic handler (halts CPU on panic — no heap needed).
+panic-halt = "0.2"
+
+# Lightweight no_std formatting (replaces core::fmt which is too large on AVR).
+ufmt = "0.2"
+
+# ---------------------------------------------------------------------------
+# Build profiles  (AVR needs size optimisation and abort-on-panic)
+# ---------------------------------------------------------------------------
+[profile.dev]
+panic            = "abort"
+lto              = true
+opt-level        = "s"
+overflow-checks  = false
+
+[profile.release]
+panic            = "abort"
+lto              = true
+opt-level        = "s"
+overflow-checks  = false
+codegen-units    = 1
+debug            = true      # keep symbols for avr-objdump / size report

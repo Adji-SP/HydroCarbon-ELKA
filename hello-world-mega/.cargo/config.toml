@@ -1,0 +1,13 @@
+[build]
+target = "avr-specs/avr-atmega2560.json"
+
+[target.'cfg(target_arch = "avr")']
+rustflags = ["-C", "opt-level=s", "-C", "target-cpu=atmega2560"]
+# Uncomment to auto-flash after `cargo +nightly run --release`:
+# runner = "ravedude mega2560 -cb 115200"
+
+# build-std is required for no_std AVR targets.
+# -Zjson-target-spec is a cargo flag — must be passed on the CLI:
+#   cargo +nightly build -Zjson-target-spec --release
+[unstable]
+build-std = ["core"]

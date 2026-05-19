@@ -47,7 +47,7 @@ mod app {
     // AMBIENT_TEST_MODE = true  → lamp pin held LOW; pseudo-ON/OFF cycles for
     //                             bench testing without a real lamp.
     // AMBIENT_TEST_MODE = false → real IR lamp toggled at HALF_PERIOD_MS.
-    const AMBIENT_TEST_MODE: bool = true;
+    const AMBIENT_TEST_MODE: bool = false;
 
     // USE_FILTERED_FOR_PROC = true  → sensor.rs receives EMA-filtered ADC values.
     // USE_FILTERED_FOR_PROC = false → sensor.rs receives true-raw ADC values.
