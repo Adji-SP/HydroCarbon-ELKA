@@ -1,0 +1,14 @@
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\deps\serde-9022a8d9ce328d2e.d: C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\build\serde-59c40348816929e5\out/private.rs
+
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\deps\libserde-9022a8d9ce328d2e.rlib: C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\build\serde-59c40348816929e5\out/private.rs
+
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\deps\libserde-9022a8d9ce328d2e.rmeta: C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\build\serde-59c40348816929e5\out/private.rs
+
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs:
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\build\serde-59c40348816929e5\out/private.rs:
+
+# env-dep:OUT_DIR=D:\\PropertiesProject-D\\ELKA\\Teensy\\hello-world-mega\\target\\debug\\build\\serde-59c40348816929e5\\out

@@ -1,0 +1,14 @@
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\deps\thiserror-47e921dcd378ecd2.d: C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\lib.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\aserror.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\display.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\var.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\private.rs D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\build\thiserror-aa773570e640544e\out/private.rs
+
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\deps\libthiserror-47e921dcd378ecd2.rlib: C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\lib.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\aserror.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\display.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\var.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\private.rs D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\build\thiserror-aa773570e640544e\out/private.rs
+
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\deps\libthiserror-47e921dcd378ecd2.rmeta: C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\lib.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\aserror.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\display.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\var.rs C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\private.rs D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\build\thiserror-aa773570e640544e\out/private.rs
+
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\lib.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\aserror.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\display.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\var.rs:
+C:\Users\Karma\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.18\src\private.rs:
+D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\debug\build\thiserror-aa773570e640544e\out/private.rs:
+
+# env-dep:OUT_DIR=D:\\PropertiesProject-D\\ELKA\\Teensy\\hello-world-mega\\target\\debug\\build\\thiserror-aa773570e640544e\\out

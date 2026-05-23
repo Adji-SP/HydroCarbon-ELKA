@@ -1,0 +1,1299 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   0.922506500s  INFO prepare_target{force=false package_id=hello-world-mega v0.1.0 (D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega) target="hello-world-mega"}: cargo::core::compiler::fingerprint: fingerprint error for hello-world-mega v0.1.0 (D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega)/Check { test: true }/TargetInner { name: "hello-world-mega", doc: true, ..: with_path("D:\\PropertiesProject-D\\ELKA\\Teensy\\hello-world-mega\\src\\main.rs", Edition2021) }
+   0.922693300s  INFO prepare_target{force=false package_id=hello-world-mega v0.1.0 (D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega) target="hello-world-mega"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\hello-world-mega-acc2db203479ddb6\test-bin-hello-world-mega`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.947333100s  INFO prepare_target{force=false package_id=arduino-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="arduino_hal"}: cargo::core::compiler::fingerprint: fingerprint error for arduino-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("arduino_hal", ["lib"], "C:\\Users\\Karma\\.cargo\\git\\checkouts\\avr-hal-88cb7c7248a695f0\\e5c8f37\\arduino-hal\\src\\lib.rs", Edition2021) }
+   0.947401300s  INFO prepare_target{force=false package_id=arduino-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="arduino_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\arduino-hal-3d4baedb839de4e9\lib-arduino_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.949489500s  INFO prepare_target{force=false package_id=atmega-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="atmega_hal"}: cargo::core::compiler::fingerprint: fingerprint error for atmega-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("atmega_hal", ["lib"], "C:\\Users\\Karma\\.cargo\\git\\checkouts\\avr-hal-88cb7c7248a695f0\\e5c8f37\\mcu\\atmega-hal\\src\\lib.rs", Edition2021) }
+   0.949531000s  INFO prepare_target{force=false package_id=atmega-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="atmega_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\atmega-hal-813ac11e5f9f75ab\lib-atmega_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.950874300s  INFO prepare_target{force=false package_id=avr-device v0.8.1 target="avr_device"}: cargo::core::compiler::fingerprint: fingerprint error for avr-device v0.8.1/Check { test: false }/TargetInner { ..: lib_target("avr_device", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\avr-device-0.8.1\\src\\lib.rs", Edition2021) }
+   0.950910100s  INFO prepare_target{force=false package_id=avr-device v0.8.1 target="avr_device"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\avr-device-53c1852ed0438c7a\lib-avr_device`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   1.041050400s  INFO prepare_target{force=false package_id=bare-metal v1.0.0 target="bare_metal"}: cargo::core::compiler::fingerprint: fingerprint error for bare-metal v1.0.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("bare_metal", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\bare-metal-1.0.0\\src\\lib.rs", Edition2015) }
+   1.041098700s  INFO prepare_target{force=false package_id=bare-metal v1.0.0 target="bare_metal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\bare-metal-7e83b745c4393575\lib-bare_metal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.042195600s  INFO prepare_target{force=false package_id=cfg-if v1.0.4 target="cfg_if"}: cargo::core::compiler::fingerprint: fingerprint error for cfg-if v1.0.4/Check { test: false }/TargetInner { ..: lib_target("cfg_if", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\cfg-if-1.0.4\\src\\lib.rs", Edition2018) }
+   1.042229900s  INFO prepare_target{force=false package_id=cfg-if v1.0.4 target="cfg_if"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\cfg-if-4a72a2847e5187ba\lib-cfg_if`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.043414900s  INFO prepare_target{force=false package_id=critical-section v1.2.0 target="critical_section"}: cargo::core::compiler::fingerprint: fingerprint error for critical-section v1.2.0/Check { test: false }/TargetInner { ..: lib_target("critical_section", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\critical-section-1.2.0\\src\\lib.rs", Edition2018) }
+   1.043448300s  INFO prepare_target{force=false package_id=critical-section v1.2.0 target="critical_section"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\critical-section-bb8ae91c10311e7e\lib-critical_section`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.044475900s  INFO prepare_target{force=false package_id=vcell v0.1.3 target="vcell"}: cargo::core::compiler::fingerprint: fingerprint error for vcell v0.1.3/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("vcell", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\vcell-0.1.3\\src\\lib.rs", Edition2015) }
+   1.044536100s  INFO prepare_target{force=false package_id=vcell v0.1.3 target="vcell"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\vcell-e02b0e502a862793\lib-vcell`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.046081800s  INFO prepare_target{force=false package_id=avr-hal-generic v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="avr_hal_generic"}: cargo::core::compiler::fingerprint: fingerprint error for avr-hal-generic v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("avr_hal_generic", ["lib"], "C:\\Users\\Karma\\.cargo\\git\\checkouts\\avr-hal-88cb7c7248a695f0\\e5c8f37\\avr-hal-generic\\src\\lib.rs", Edition2021) }
+   1.046120000s  INFO prepare_target{force=false package_id=avr-hal-generic v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="avr_hal_generic"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\avr-hal-generic-430103b42cff54a1\lib-avr_hal_generic`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   1.047505000s  INFO prepare_target{force=false package_id=embedded-hal v0.2.7 target="embedded_hal"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-hal v0.2.7/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("embedded_hal", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-hal-0.2.7\\src\\lib.rs", Edition2015) }
+   1.047541200s  INFO prepare_target{force=false package_id=embedded-hal v0.2.7 target="embedded_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\embedded-hal-72080aefa9b5251f\lib-embedded_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.048267800s  INFO prepare_target{force=false package_id=nb v0.1.3 target="nb"}: cargo::core::compiler::fingerprint: fingerprint error for nb v0.1.3/Check { test: false }/TargetInner { name_inferred: true, doctest: false, ..: lib_target("nb", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\nb-0.1.3\\src\\lib.rs", Edition2015) }
+   1.048299900s  INFO prepare_target{force=false package_id=nb v0.1.3 target="nb"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\nb-fbd615c6377de6d2\lib-nb`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   1.048970300s  INFO prepare_target{force=false package_id=nb v1.1.0 target="nb"}: cargo::core::compiler::fingerprint: fingerprint error for nb v1.1.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("nb", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\nb-1.1.0\\src\\lib.rs", Edition2018) }
+   1.049001500s  INFO prepare_target{force=false package_id=nb v1.1.0 target="nb"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\nb-520f28ba68b0a8d9\lib-nb`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   1.049968700s  INFO prepare_target{force=false package_id=void v1.0.2 target="void"}: cargo::core::compiler::fingerprint: fingerprint error for void v1.0.2/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("void", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\void-1.0.2\\src\\lib.rs", Edition2015) }
+   1.050005500s  INFO prepare_target{force=false package_id=void v1.0.2 target="void"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\void-30235cb0967db9ff\lib-void`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   1.051031200s  INFO prepare_target{force=false package_id=embedded-hal v1.0.0 target="embedded_hal"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-hal v1.0.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("embedded_hal", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-hal-1.0.0\\src\\lib.rs", Edition2021) }
+   1.051065800s  INFO prepare_target{force=false package_id=embedded-hal v1.0.0 target="embedded_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\embedded-hal-fcf15327c902a515\lib-embedded_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.051942100s  INFO prepare_target{force=false package_id=embedded-hal-bus v0.1.0 target="embedded_hal_bus"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-hal-bus v0.1.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("embedded_hal_bus", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-hal-bus-0.1.0\\src\\lib.rs", Edition2021) }
+   1.051977200s  INFO prepare_target{force=false package_id=embedded-hal-bus v0.1.0 target="embedded_hal_bus"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\embedded-hal-bus-e10fd0e1ebe03a3b\lib-embedded_hal_bus`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.054178900s  INFO prepare_target{force=false package_id=embedded-storage v0.2.0 target="embedded_storage"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-storage v0.2.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("embedded_storage", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-storage-0.2.0\\src\\lib.rs", Edition2018) }
+   1.054216400s  INFO prepare_target{force=false package_id=embedded-storage v0.2.0 target="embedded_storage"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\embedded-storage-c333d3f2d206b4d6\lib-embedded_storage`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.057300100s  INFO prepare_target{force=false package_id=ufmt v0.2.0 target="ufmt"}: cargo::core::compiler::fingerprint: fingerprint error for ufmt v0.2.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("ufmt", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\ufmt-0.2.0\\src\\lib.rs", Edition2021) }
+   1.057340500s  INFO prepare_target{force=false package_id=ufmt v0.2.0 target="ufmt"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\ufmt-b148ed7e0879081d\lib-ufmt`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.058574900s  INFO prepare_target{force=false package_id=ufmt-write v0.1.0 target="ufmt_write"}: cargo::core::compiler::fingerprint: fingerprint error for ufmt-write v0.1.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("ufmt_write", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\ufmt-write-0.1.0\\src\\lib.rs", Edition2018) }
+   1.058611300s  INFO prepare_target{force=false package_id=ufmt-write v0.1.0 target="ufmt_write"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\ufmt-write-c8c88d88ea32be0d\lib-ufmt_write`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   1.059591900s  INFO prepare_target{force=false package_id=unwrap-infallible v0.1.5 target="unwrap_infallible"}: cargo::core::compiler::fingerprint: fingerprint error for unwrap-infallible v0.1.5/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("unwrap_infallible", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\unwrap-infallible-0.1.5\\src\\lib.rs", Edition2018) }
+   1.059629000s  INFO prepare_target{force=false package_id=unwrap-infallible v0.1.5 target="unwrap_infallible"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\unwrap-infallible-bc1a9f29bf318771\lib-unwrap_infallible`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.060682100s  INFO prepare_target{force=false package_id=panic-halt v0.2.0 target="panic_halt"}: cargo::core::compiler::fingerprint: fingerprint error for panic-halt v0.2.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("panic_halt", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\panic-halt-0.2.0\\src\\lib.rs", Edition2015) }
+   1.060716600s  INFO prepare_target{force=false package_id=panic-halt v0.2.0 target="panic_halt"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\panic-halt-c4584eed5f06ee07\lib-panic_halt`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   1.065607200s  INFO prepare_target{force=false package_id=hello-world-mega v0.1.0 (D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega) target="hello-world-mega"}: cargo::core::compiler::fingerprint: fingerprint error for hello-world-mega v0.1.0 (D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega)/Check { test: false }/TargetInner { name: "hello-world-mega", doc: true, ..: with_path("D:\\PropertiesProject-D\\ELKA\\Teensy\\hello-world-mega\\src\\main.rs", Edition2021) }
+   1.065658300s  INFO prepare_target{force=false package_id=hello-world-mega v0.1.0 (D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega) target="hello-world-mega"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\hello-world-mega-57e0132c2a41ba6c\bin-hello-world-mega`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   1.067111400s  INFO prepare_target{force=false package_id=arduino-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="arduino_hal"}: cargo::core::compiler::fingerprint: fingerprint error for arduino-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("arduino_hal", ["lib"], "C:\\Users\\Karma\\.cargo\\git\\checkouts\\avr-hal-88cb7c7248a695f0\\e5c8f37\\arduino-hal\\src\\lib.rs", Edition2021) }
+   1.067154300s  INFO prepare_target{force=false package_id=arduino-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="arduino_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\arduino-hal-9017c80052abefee\lib-arduino_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   1.068799800s  INFO prepare_target{force=false package_id=atmega-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="atmega_hal"}: cargo::core::compiler::fingerprint: fingerprint error for atmega-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("atmega_hal", ["lib"], "C:\\Users\\Karma\\.cargo\\git\\checkouts\\avr-hal-88cb7c7248a695f0\\e5c8f37\\mcu\\atmega-hal\\src\\lib.rs", Edition2021) }
+   1.068841500s  INFO prepare_target{force=false package_id=atmega-hal v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="atmega_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\atmega-hal-574638f7cd12dbdc\lib-atmega_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   1.069999400s  INFO prepare_target{force=false package_id=avr-device v0.8.1 target="avr_device"}: cargo::core::compiler::fingerprint: fingerprint error for avr-device v0.8.1/Check { test: false }/TargetInner { ..: lib_target("avr_device", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\avr-device-0.8.1\\src\\lib.rs", Edition2021) }
+   1.070034600s  INFO prepare_target{force=false package_id=avr-device v0.8.1 target="avr_device"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\avr-device-be339f354e0dd8ee\lib-avr_device`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   1.071390500s  INFO prepare_target{force=false package_id=bare-metal v1.0.0 target="bare_metal"}: cargo::core::compiler::fingerprint: fingerprint error for bare-metal v1.0.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("bare_metal", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\bare-metal-1.0.0\\src\\lib.rs", Edition2015) }
+   1.071471900s  INFO prepare_target{force=false package_id=bare-metal v1.0.0 target="bare_metal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\bare-metal-b313ebd28d0a2865\lib-bare_metal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.072865200s  INFO prepare_target{force=false package_id=cfg-if v1.0.4 target="cfg_if"}: cargo::core::compiler::fingerprint: fingerprint error for cfg-if v1.0.4/Check { test: false }/TargetInner { ..: lib_target("cfg_if", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\cfg-if-1.0.4\\src\\lib.rs", Edition2018) }
+   1.072908200s  INFO prepare_target{force=false package_id=cfg-if v1.0.4 target="cfg_if"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\cfg-if-97227fe915237a68\lib-cfg_if`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.074097800s  INFO prepare_target{force=false package_id=critical-section v1.2.0 target="critical_section"}: cargo::core::compiler::fingerprint: fingerprint error for critical-section v1.2.0/Check { test: false }/TargetInner { ..: lib_target("critical_section", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\critical-section-1.2.0\\src\\lib.rs", Edition2018) }
+   1.074135300s  INFO prepare_target{force=false package_id=critical-section v1.2.0 target="critical_section"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\critical-section-36b59eb17c606259\lib-critical_section`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.075145500s  INFO prepare_target{force=false package_id=vcell v0.1.3 target="vcell"}: cargo::core::compiler::fingerprint: fingerprint error for vcell v0.1.3/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("vcell", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\vcell-0.1.3\\src\\lib.rs", Edition2015) }
+   1.075179200s  INFO prepare_target{force=false package_id=vcell v0.1.3 target="vcell"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\vcell-ead9389e4b705d1c\lib-vcell`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.076074600s  INFO prepare_target{force=false package_id=avr-hal-generic v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="avr_hal_generic"}: cargo::core::compiler::fingerprint: fingerprint error for avr-hal-generic v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("avr_hal_generic", ["lib"], "C:\\Users\\Karma\\.cargo\\git\\checkouts\\avr-hal-88cb7c7248a695f0\\e5c8f37\\avr-hal-generic\\src\\lib.rs", Edition2021) }
+   1.076110000s  INFO prepare_target{force=false package_id=avr-hal-generic v0.1.0 (https://github.com/Rahix/avr-hal#e5c8f37f) target="avr_hal_generic"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\avr-hal-generic-31d18fd29528ff4f\lib-avr_hal_generic`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   1.077525500s  INFO prepare_target{force=false package_id=embedded-hal v0.2.7 target="embedded_hal"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-hal v0.2.7/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("embedded_hal", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-hal-0.2.7\\src\\lib.rs", Edition2015) }
+   1.077622000s  INFO prepare_target{force=false package_id=embedded-hal v0.2.7 target="embedded_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\embedded-hal-1974bd41a4e3ed79\lib-embedded_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.078460800s  INFO prepare_target{force=false package_id=nb v0.1.3 target="nb"}: cargo::core::compiler::fingerprint: fingerprint error for nb v0.1.3/Check { test: false }/TargetInner { name_inferred: true, doctest: false, ..: lib_target("nb", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\nb-0.1.3\\src\\lib.rs", Edition2015) }
+   1.078495000s  INFO prepare_target{force=false package_id=nb v0.1.3 target="nb"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\nb-fab69347809285ed\lib-nb`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   1.079226500s  INFO prepare_target{force=false package_id=nb v1.1.0 target="nb"}: cargo::core::compiler::fingerprint: fingerprint error for nb v1.1.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("nb", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\nb-1.1.0\\src\\lib.rs", Edition2018) }
+   1.079262500s  INFO prepare_target{force=false package_id=nb v1.1.0 target="nb"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\nb-bdc51df5833715e4\lib-nb`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   1.093932600s  INFO prepare_target{force=false package_id=void v1.0.2 target="void"}: cargo::core::compiler::fingerprint: fingerprint error for void v1.0.2/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("void", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\void-1.0.2\\src\\lib.rs", Edition2015) }
+   1.093980000s  INFO prepare_target{force=false package_id=void v1.0.2 target="void"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\void-b91383133ac985cd\lib-void`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   1.096582900s  INFO prepare_target{force=false package_id=embedded-hal v1.0.0 target="embedded_hal"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-hal v1.0.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("embedded_hal", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-hal-1.0.0\\src\\lib.rs", Edition2021) }
+   1.096662300s  INFO prepare_target{force=false package_id=embedded-hal v1.0.0 target="embedded_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\embedded-hal-67e1fce14a531849\lib-embedded_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.098559000s  INFO prepare_target{force=false package_id=embedded-hal-bus v0.1.0 target="embedded_hal_bus"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-hal-bus v0.1.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("embedded_hal_bus", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-hal-bus-0.1.0\\src\\lib.rs", Edition2021) }
+   1.098718400s  INFO prepare_target{force=false package_id=embedded-hal-bus v0.1.0 target="embedded_hal_bus"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\embedded-hal-bus-1bd526b81d499efa\lib-embedded_hal_bus`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.105496700s  INFO prepare_target{force=false package_id=embedded-storage v0.2.0 target="embedded_storage"}: cargo::core::compiler::fingerprint: fingerprint error for embedded-storage v0.2.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("embedded_storage", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\embedded-storage-0.2.0\\src\\lib.rs", Edition2018) }
+   1.105591200s  INFO prepare_target{force=false package_id=embedded-storage v0.2.0 target="embedded_storage"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\embedded-storage-211b8d27a61bea00\lib-embedded_storage`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.106657500s  INFO prepare_target{force=false package_id=ufmt v0.2.0 target="ufmt"}: cargo::core::compiler::fingerprint: fingerprint error for ufmt v0.2.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("ufmt", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\ufmt-0.2.0\\src\\lib.rs", Edition2021) }
+   1.106719800s  INFO prepare_target{force=false package_id=ufmt v0.2.0 target="ufmt"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\ufmt-d3e34ccfe235d8e1\lib-ufmt`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.107595000s  INFO prepare_target{force=false package_id=ufmt-write v0.1.0 target="ufmt_write"}: cargo::core::compiler::fingerprint: fingerprint error for ufmt-write v0.1.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("ufmt_write", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\ufmt-write-0.1.0\\src\\lib.rs", Edition2018) }
+   1.107652100s  INFO prepare_target{force=false package_id=ufmt-write v0.1.0 target="ufmt_write"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\ufmt-write-69604a6a09886ece\lib-ufmt_write`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   1.118847700s  INFO prepare_target{force=false package_id=unwrap-infallible v0.1.5 target="unwrap_infallible"}: cargo::core::compiler::fingerprint: fingerprint error for unwrap-infallible v0.1.5/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("unwrap_infallible", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\unwrap-infallible-0.1.5\\src\\lib.rs", Edition2018) }
+   1.119082100s  INFO prepare_target{force=false package_id=unwrap-infallible v0.1.5 target="unwrap_infallible"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\unwrap-infallible-110cdcc6915a5481\lib-unwrap_infallible`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   1.124687700s  INFO prepare_target{force=false package_id=panic-halt v0.2.0 target="panic_halt"}: cargo::core::compiler::fingerprint: fingerprint error for panic-halt v0.2.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("panic_halt", ["lib"], "C:\\Users\\Karma\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\panic-halt-0.2.0\\src\\lib.rs", Edition2015) }
+   1.124765500s  INFO prepare_target{force=false package_id=panic-halt v0.2.0 target="panic_halt"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\PropertiesProject-D\ELKA\Teensy\hello-world-mega\target\avr-atmega2560\debug\.fingerprint\panic-halt-b5c55b32797e17cf\lib-panic_halt`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+    Checking nb v1.1.0
+    Checking critical-section v1.2.0
+    Checking embedded-hal v1.0.0
+    Checking ufmt-write v0.1.0
+    Checking bare-metal v1.0.0
+    Checking cfg-if v1.0.4
+    Checking void v1.0.2
+    Checking vcell v0.1.3
+error: could not compile `critical-section` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+    Checking unwrap-infallible v0.1.5
+error: could not compile `nb` (lib) due to 1 previous error
+    Checking embedded-storage v0.2.0
+error: could not compile `bare-metal` (lib) due to 1 previous error
+error: could not compile `ufmt-write` (lib) due to 1 previous error
+error: could not compile `critical-section` (lib) due to 1 previous error
+    Checking panic-halt v0.2.0
+error: could not compile `embedded-hal` (lib) due to 1 previous error
+error: could not compile `vcell` (lib) due to 1 previous error
+error: could not compile `nb` (lib) due to 1 previous error
+error: could not compile `ufmt-write` (lib) due to 1 previous error
+error: could not compile `cfg-if` (lib) due to 1 previous error
+error: could not compile `vcell` (lib) due to 1 previous error
+error: could not compile `void` (lib) due to 1 previous error
+error: could not compile `cfg-if` (lib) due to 1 previous error
+error: could not compile `bare-metal` (lib) due to 1 previous error
+error: could not compile `embedded-hal` (lib) due to 1 previous error
+error: could not compile `embedded-storage` (lib) due to 1 previous error
+error: could not compile `void` (lib) due to 1 previous error
+error: could not compile `unwrap-infallible` (lib) due to 1 previous error
+error: could not compile `unwrap-infallible` (lib) due to 1 previous error
+error: could not compile `embedded-storage` (lib) due to 1 previous error
+error: could not compile `panic-halt` (lib) due to 1 previous error
+error: could not compile `panic-halt` (lib) due to 1 previous error
