@@ -14,8 +14,9 @@ Written in Rust using the RTIC v2 async framework. Zero heap allocations — ful
 5. [Firmware Architecture](#firmware-architecture)
 6. [Configuration Reference](#configuration-reference)
 7. [Log Format](#log-format)
-8. [Building & Flashing](#building--flashing)
-9. [Data Files](#data-files)
+8. [Building & Flashing — Teensy 4.1](#building--flashing)
+9. [Flashing the Mega (hello-world-mega)](#flashing-the-mega-hello-world-mega)
+10. [Data Files](#data-files)
 
 ---
 
@@ -353,7 +354,122 @@ Data files `data_raw.csv` and `data_proc.csv` in the repo root contain example c
 | `data_raw.csv` | Example RAW log — raw, median, and EMA columns per channel |
 | `data_proc.csv` | Example PROC log — ratio, response, absorbance (raw and filtered) |
 | `data.txt` | Combined raw serial capture from a bench test session |
-| `hello-world/firmware.hex` | Pre-built Intel HEX ready to flash |
+| `hello-world/firmware.hex` | Pre-built Intel HEX ready to flash (Teensy 4.1) |
+| `hello-world-mega/firmware.hex` | Pre-built Intel HEX ready to flash (Arduino Mega) |
+
+---
+
+## Flashing the Mega (hello-world-mega)
+
+Firmware for the **Arduino Mega 2560** (ATmega2560, AVR 8-bit). Same signal chain and CSV log format as the Teensy version.
+
+> **Note:** AVR Rust requires **Rust Nightly** and the AVR LLVM backend.
+
+### Prerequisites
+
+```powershell
+# Rust nightly + AVR components
+rustup install nightly
+rustup component add llvm-tools-preview rust-src --toolchain nightly
+
+# cargo-binutils (for .hex generation)
+cargo install cargo-binutils
+
+# ravedude (for one-command flash via cargo run)
+cargo install ravedude
+```
+
+The AVR linker (`avr-gcc`) is provided by the **Arduino IDE** install already on this machine:
+
+```powershell
+# Temporarily add avr-gcc to PATH (already handled by build.ps1 automatically):
+$env:PATH += ";$env:LOCALAPPDATA\Arduino15\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino7\bin"
+avr-gcc --version   # verify
+```
+
+### Build (manual)
+
+```powershell
+cd hello-world-mega
+cargo +nightly build -Zjson-target-spec --release
+```
+
+### Generate HEX (manual)
+
+```powershell
+cargo +nightly objcopy -Zjson-target-spec --release -- -O ihex firmware.hex
+```
+
+### One-liner: build.ps1
+
+The `build.ps1` script in `hello-world-mega/` handles PATH setup, build, and flash in a single command:
+
+```powershell
+cd hello-world-mega
+
+# Build only — produces firmware.hex
+.\build.ps1
+
+# Build + flash on default port COM14
+.\build.ps1 -Flash
+
+# Build + flash on a different port
+.\build.ps1 -Flash -Port COM7
+```
+
+### Flash Options
+
+#### Option A — ravedude (recommended, one command)
+
+1. Uncomment the `runner` line in `hello-world-mega/.cargo/config.toml`:
+   ```toml
+   runner = "ravedude mega2560 -cb 115200"
+   ```
+2. Then:
+   ```powershell
+   cd hello-world-mega
+   cargo +nightly run -Z build-std=core --release
+   ```
+   `ravedude` auto-detects the COM port, builds, and flashes.
+
+#### Option B — avrdude manually
+
+```powershell
+# Replace COM3 / COM14 with your actual port (check Device Manager)
+avrdude -p atmega2560 -c wiring -P COM14 -b 115200 -D `
+  -U flash:w:hello-world-mega\firmware.hex:i
+```
+
+Or using the `avrdude` bundled with Arduino IDE (already on this machine):
+
+```powershell
+$AVRDUDE     = "$env:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\bin\avrdude.exe"
+$AVRDUDE_CONF = "$env:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\etc\avrdude.conf"
+
+& $AVRDUDE -C $AVRDUDE_CONF `
+    -p atmega2560 -c wiring -P COM14 -b 115200 -D `
+    -U "flash:w:hello-world-mega\firmware.hex:i"
+```
+
+#### Option C — Arduino IDE
+
+1. Build the `.hex` as above (or use the pre-built `hello-world-mega/firmware.hex`).
+2. In Arduino IDE: **Sketch → Upload Using Programmer**, then select the `.hex`.
+
+### Monitor Serial Output
+
+The Mega firmware outputs over **UART0** (USB CH340/FT232 bridge) at **115 200 baud**:
+
+```powershell
+# Python miniterm
+python -m serial.tools.miniterm COM14 115200
+
+# Or use Arduino IDE Serial Monitor at 115200 baud
+```
+
+Log format is identical to the Teensy version — `RAW,...` and `PROC,...` CSV lines.
+
+> See [`hello-world-mega/README.md`](hello-world-mega/README.md) for the full code manipulation guide (pin rewiring, filter tuning, ADC reference, etc.).
 
 ---
 

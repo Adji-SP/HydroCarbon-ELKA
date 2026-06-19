@@ -1,0 +1,47 @@
+# Node dependencies
+node_modules/
+
+resource/trash/
+resource/asset/
+resource/
+
+trash/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+
+# OS or editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Build artifacts (optional)
+dist/
+build/
+
+# Electron packaging cache
+out/
+
+# .gitignore
+node_modules/
+*.log
+.DS_Store
+.vscode/
+build/
+dist/
+*.zip
+*.mp4
+*.exe
+*.dll
+*.psd
+*.png
+*.jpg
+    
+
+# git remote add origin https://github.com/coolguy916/alprog_boncos.git
+# git branch -M main
+# git push -u origin main

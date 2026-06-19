@@ -1,0 +1,31 @@
+# NDIR Monitor — CSV Recording
+# Port   : COM14
+# Started: 2026-05-21T07:27:02.656Z
+# RAW  fields: type,timestamp,phase,ch1_raw,ch2_raw,ch3_raw,ch1_filt,ch2_filt,ch3_filt,ema1,ema2,ema3,flag
+# PROC fields: type,timestamp,gas_flag,raw_val1,raw_val2,ratio,ratio_filt,baseline,delta1,delta2,response1,response2,ema_out
+RAW,47.625,1,575,575,457,577,576,593,577.00,576.6,595.5,0
+RAW,47.750,0,577,576,581,577,576,581,577.00,576.5,591.9,0
+WRN pair skip: ref_diff<REF_DIFF_MIN - lamp switching?
+RAW,47.875,1,577,580,742,577,576,593,577.00,576.3,592.2,0
+RAW,48.000,0,579,577,436,577,576,581,577.00,576.3,589.4,0
+WRN pair skip: ref_diff<REF_DIFF_MIN - lamp switching?
+RAW,48.125,1,573,572,357,577,576,457,577.00,576.2,556.3,0
+RAW,48.250,0,577,577,802,577,577,581,577.00,576.4,562.5,0
+WRN pair skip: ref_diff<REF_DIFF_MIN - lamp switching?
+RAW,48.375,1,576,578,719,577,577,719,577.00,576.5,601.6,0
+RAW,48.500,0,578,577,284,577,577,436,577.00,576.7,560.2,0
+WRN pair skip: ref_diff<REF_DIFF_MIN - lamp switching?
+RAW,48.625,1,577,579,551,577,577,551,577.00,576.7,557.9,0
+RAW,48.750,0,578,576,778,577,577,719,577.00,576.8,598.2,0
+WRN pair skip: ref_diff<REF_DIFF_MIN - lamp switching?
+RAW,48.875,1,575,574,520,577,577,551,577.00,576.9,586.4,0
+RAW,49.000,0,576,576,510,577,576,520,577.00,576.6,569.8,0
+WRN pair skip: ref_diff<REF_DIFF_MIN - lamp switching?
+RAW,49.125,1,577,580,716,577,576,551,577.00,576.5,565.1,0
+RAW,49.250,0,579,578,505,577,576,520,577.00,576.4,553.8,0
+WRN pair skip: ref_diff<REF_DIFF_MIN - lamp switching?
+RAW,49.375,1,575,576,357,576,576,510,576.7,576.3,542.9,0
+RAW,49.500,0,579,576,771,577,576,510,576.8,576.2,534.6,0
+WRN pair skip: ref_diff<REF_DIFF_MIN - lamp switching?
+# Stopped  : 2026-05-21T07:27:04.757Z
+# Total lines: 24

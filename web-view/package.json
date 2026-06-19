@@ -1,0 +1,64 @@
+{
+  "name": "alprog_electron",
+  "version": "1.0.0",
+  "description": "hello world",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:web": "react-scripts start",
+    "build:electron": "electron-builder",
+    "build:web": "react-scripts build",
+    "build": "concurrently \"npm run build:electron\" \"npm run build:web\"",
+    "dev": "concurrently \"npm:start\" \"npm:start:web\"",
+    "switch-db": "node scripts/switch-db.js",
+    "firebase:emulators": "firebase emulators:start",
+    "firebase:login": "firebase login",
+    "firebase:init": "firebase init",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alprog_boncos",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^36.2.1",
+    "electron-builder": "^25.1.8",
+    "firebase-tools": "^13.35.1"
+  },
+  "dependencies": {
+    "@serialport/parser-readline": "^13.0.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "firebase": "^11.9.0",
+    "firebase-admin": "^12.7.0",
+    "mysql2": "^3.14.1",
+    "serialport": "^13.0.0",
+    "ws": "^8.18.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolguy916/testing_electron_alprog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coolguy916/testing_electron_alprog/issues"
+  },
+  "homepage": "https://github.com/coolguy916/testing_electron_alprog#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
