@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDIR Monitor</title>
+  <style>
+    /* ── Reset & base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep:    #0d0f1a;
+      --bg-card:    #12151f;
+      --bg-panel:   #1a1d2e;
+      --bg-input:   #0f1120;
+      --border:     #1e2340;
+      --border-hi:  #2a3060;
+      --accent:     #2196f3;
+      --accent-g:   #4caf50;
+      --accent-r:   #f44336;
+      --accent-o:   #ff9800;
+      --accent-p:   #9c27b0;
+      --text:       #e0e4ff;
+      --text-dim:   #7080a0;
+      --text-label: #a0aac0;
+      --ok:         #4caf50;
+      --err:        #f44336;
+      --warn:       #ff9800;
+      --font:       'Segoe UI', system-ui, sans-serif;
+    }
+
+    html, body {
+      height: 100%; overflow: hidden;
+      background: var(--bg-deep);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 12px;
+    }
+
+    /* ── App shell ────────────────────────────────────────── */
+    #app {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* ── Top-bar ──────────────────────────────────────────── */
+    #topbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 14px;
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      z-index: 100;
+    }
+    #topbar .title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-right: auto;
+    }
+    #topbar .title span { color: var(--text-dim); font-weight: 400; }
+
+    /* pill status badges */
+    .conn-badge {
+      display: flex; align-items: center; gap: 5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border-hi);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      cursor: default;
+      transition: all .2s;
+    }
+    .conn-badge .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--text-dim);
+      transition: background .3s;
+    }
+    .conn-badge.connected .dot   { background: var(--ok);   box-shadow: 0 0 6px var(--ok); }
+    .conn-badge.connecting .dot  { background: var(--warn);  animation: blink .8s infinite; }
+    .conn-badge.error .dot       { background: var(--err); }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+    #btn-menu {
+      padding: 4px 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      color: var(--text-label);
+      cursor: pointer;
+      font-size: 14px;
+      transition: background .15s;
+    }
+    #btn-menu:hover { background: var(--border-hi); color: var(--text); }
+
+    /* ── Connection drawer ────────────────────────────────── */
+    #conn-drawer {
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .3s ease;
+      flex-shrink: 0;
+    }
+    #conn-drawer.open { max-height: 200px; }
+
+    .drawer-inner {
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .conn-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    .conn-section h4 {
+      font-size: 11px; font-weight: 700;
+      color: var(--text-label);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .conn-row {
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 6px;
+    }
+    .conn-row label { color: var(--text-dim); min-width: 42px; }
+    .conn-row input, .conn-row select {
+      flex: 1;
+      background: var(--bg-input);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      color: var(--text);
+      padding: 3px 6px;
+      font-size: 11px;
+      font-family: 'Consolas', monospace;
+    }
+    .conn-row input:focus, .conn-row select:focus {
+      outline: none; border-color: var(--accent);
+    }
+    .conn-btns { display: flex; gap: 6px; margin-top: 4px; }
+    .btn { padding: 4px 12px; border-radius: 4px; border: none; font-size: 11px; font-weight: 600; cursor: pointer; transition: all .15s; }
+    .btn-connect    { background: var(--accent); color: #fff; }
+    .btn-connect:hover { filter: brightness(1.2); }
+    .btn-disconnect { background: #1e2236; border: 1px solid var(--border-hi); color: var(--text-dim); }
+    .btn-disconnect:hover { background: var(--err); border-color: var(--err); color: #fff; }
+    .btn-scan { background: #1a2636; border: 1px solid var(--border-hi); color: var(--accent); }
+    .btn-scan:hover { background: var(--accent); color: #fff; }
+
+    /* ── Main content ─────────────────────────────────────── */
+    #content {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      grid-template-rows: auto 1fr 130px;
+      gap: 6px;
+      padding: 6px;
+      overflow: hidden;
+    }
+
+    /* ── Gauge row ────────────────────────────────────────── */
+    #gauge-row {
+      grid-column: 1 / 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .gauge-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      display: flex; flex-direction: column; align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .gauge-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(33,150,243,.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .gauge-label {
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+    .gauge-svg { width: 100px; height: 60px; }
+    .gauge-val {
+      font-size: 20px; font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      margin-top: 2px;
+    }
+    .gauge-unit { font-size: 10px; color: var(--text-dim); }
+    .gauge-sub {
+      font-size: 10px; color: var(--text-dim);
+      margin-top: 2px;
+    }
+    .gauge-sub span { color: var(--text-label); font-family: 'Consolas', monospace; }
+
+    /* ── Chart area ───────────────────────────────────────── */
+    #chart-area {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: flex; flex-direction: column; gap: 6px; overflow: hidden;
+    }
+    .chart-controls {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px;
+      padding: 6px 10px; flex-shrink: 0;
+    }
+    .chart-controls label {
+      display: flex; align-items: center; gap: 4px;
+      font-size: 11px; color: var(--text-dim); cursor: pointer;
+    }
+    .chart-controls input { cursor: pointer; }
+    .chart-box {
+      flex: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px;
+      display: flex; flex-direction: column; overflow: hidden; padding: 6px; position: relative;
+    }
+    .chart-box canvas { flex: 1; width: 100%; display: block; border-radius: 4px; }
+    .chart-box-title {
+      position: absolute; top: 10px; left: 10px;
+      font-size: 10px; font-weight: 700; letter-spacing: 1px; z-index: 10;
+      background: rgba(10,12,20,0.7); padding: 2px 6px; border-radius: 4px;
+    }
+
+    /* ── PROC panel ───────────────────────────────────────── */
+    #proc-panel {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      display: flex; flex-direction: column; gap: 8px;
+      overflow: hidden;
+    }
+    .proc-title {
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+    .proc-field {
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .proc-field-label {
+      font-size: 9px; color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: .8px;
+    }
+    .proc-field-val {
+      font-size: 16px; font-weight: 700;
+      font-family: 'Consolas', monospace;
+      color: var(--text);
+    }
+    .proc-bar-wrap {
+      height: 4px; background: var(--border);
+      border-radius: 2px; overflow: hidden;
+    }
+    .proc-bar {
+      height: 100%; border-radius: 2px;
+      transition: width .3s ease;
+    }
+    .gas-flag {
+      margin-top: auto;
+      padding: 6px 10px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 12px; font-weight: 800;
+      letter-spacing: 1px;
+      border: 1px solid var(--border);
+      transition: all .3s;
+    }
+    .gas-flag.active {
+      background: rgba(244,67,54,.15);
+      border-color: var(--err);
+      color: var(--err);
+      box-shadow: 0 0 12px rgba(244,67,54,.3);
+      animation: pulse-red .8s infinite;
+    }
+    .gas-flag.baseline {
+      background: rgba(255,152,0,.1);
+      border-color: var(--warn);
+      color: var(--warn);
+    }
+    .gas-flag.clear {
+      background: rgba(76,175,80,.08);
+      border-color: var(--ok);
+      color: var(--ok);
+    }
+    @keyframes pulse-red {
+      0%,100% { box-shadow: 0 0 12px rgba(244,67,54,.3); }
+      50%      { box-shadow: 0 0 24px rgba(244,67,54,.7); }
+    }
+
+    /* ── Serial log ───────────────────────────────────────── */
+    #log-area {
+      grid-column: 1 / 3;
+      grid-row: 3 / 4;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    #log-header {
+      display: flex; align-items: center; gap: 8px;
+      padding: 4px 10px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    #log-header span {
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-right: auto;
+    }
+    #btn-clear-log, #btn-pause-log {
+      padding: 2px 8px; border-radius: 3px; border: 1px solid var(--border-hi);
+      background: var(--bg-input); color: var(--text-dim);
+      font-size: 10px; cursor: pointer;
+    }
+    #btn-clear-log:hover { border-color: var(--err); color: var(--err); }
+    #btn-pause-log:hover { border-color: var(--accent); color: var(--accent); }
+    #btn-pause-log.paused { border-color: var(--warn); color: var(--warn); }
+
+    #log-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 4px 10px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 10.5px;
+      line-height: 1.5;
+    }
+    #log-scroll::-webkit-scrollbar { width: 4px; }
+    #log-scroll::-webkit-scrollbar-track { background: transparent; }
+    #log-scroll::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 2px; }
+
+    .log-line { display: flex; gap: 8px; }
+    .log-ts   { color: var(--text-dim); min-width: 70px; flex-shrink: 0; }
+    .log-raw  { color: var(--text-label); }
+    .log-raw.type-RAW  { color: #64b5f6; }
+    .log-raw.type-PROC { color: #81c784; }
+    .log-raw.type-err  { color: var(--err); }
+    .log-raw.type-warn { color: var(--warn); }
+    .log-raw.type-info { color: var(--text-dim); font-style: italic; }
+
+    /* ── Status bar ───────────────────────────────────────── */
+    #statusbar {
+      padding: 3px 14px;
+      background: var(--bg-panel);
+      border-top: 1px solid var(--border);
+      display: flex; gap: 16px; align-items: center;
+      flex-shrink: 0;
+      font-size: 10px; color: var(--text-dim);
+    }
+    #statusbar .sb-item { display: flex; gap: 4px; align-items: center; }
+    #statusbar .sb-val  { color: var(--text-label); font-family: 'Consolas', monospace; }
+    /* ── Recording controls ────────────────────────────────── */
+    #rec-group {
+      display: flex; align-items: center; gap: 4px;
+      margin-left: 8px;
+    }
+    .btn-rec {
+      padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border-hi);
+      background: var(--bg-input); color: var(--text-dim);
+      font-size: 10px; font-weight: 700; cursor: pointer;
+      transition: all .15s;
+    }
+    #btn-rec-start               { color: #f44336; border-color: rgba(244,67,54,.4); }
+    #btn-rec-start:not(:disabled):hover { background: rgba(244,67,54,.15); border-color: #f44336; }
+    #btn-rec-start.recording     { background: rgba(244,67,54,.2); border-color: #f44336;
+                                   animation: rec-blink 1s ease-in-out infinite; }
+    #btn-rec-pause:not(:disabled):hover { border-color: var(--warn); color: var(--warn); }
+    #btn-rec-stop:not(:disabled):hover  { border-color: var(--err); color: var(--err); }
+    .btn-rec:disabled { opacity: .35; cursor: not-allowed; }
+    @keyframes rec-blink { 0%,100% { opacity:1 } 50% { opacity:.55 } }
+
+    #rec-info {
+      display: flex; align-items: center; gap: 6px;
+      margin-left: 6px; font-size: 10px; color: var(--text-dim);
+      font-family: 'Consolas', monospace;
+    }
+    .rec-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #444; flex-shrink: 0;
+      transition: background .3s, box-shadow .3s;
+    }
+    .rec-dot.recording { background: #f44336; box-shadow: 0 0 6px #f44336;
+                         animation: rec-blink 1s ease-in-out infinite; }
+    .rec-dot.paused    { background: #ff9800; box-shadow: 0 0 4px #ff9800; }
+    #rec-elapsed { letter-spacing: .5px; }
+
+    /* ── PROC value flash on update ───────────────────────── */
+    @keyframes val-update {
+      0%   { opacity:.4; transform: scale(1.08) translateY(-1px); }
+      100% { opacity:1;  transform: scale(1)   translateY(0); }
+    }
+    .val-updated { animation: val-update .3s ease-out forwards; }
+
+    /* ── Log area recording bar ───────────────────────────── */
+    #log-header {
+      display: flex; flex-direction: column;
+      padding: 4px 10px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      gap: 3px;
+    }
+    .log-hdr-row {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .log-hdr-row span {
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-right: auto;
+    }
+    #rec-bar {
+      display: flex; align-items: center; gap: 5px;
+      padding-top: 2px;
+      border-top: 1px solid var(--border);
+    }
+    #rec-bar-info {
+      margin-left: auto; display: flex; align-items: center; gap: 5px;
+      font-size: 10px; color: var(--text-dim); font-family: 'Consolas', monospace;
+    }
+    .rec-sep { color: var(--border-hi); }
+    #rec-filename { max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+<div id="app">
+
+  <!-- Top bar -->
+  <div id="topbar">
+    <div class="title">🔬 NDIR <span>Monitor</span></div>
+
+    <div class="conn-badge" id="badge-serial">
+      <div class="dot"></div>
+      <span id="badge-serial-txt">SERIAL</span>
+    </div>
+    <div class="conn-badge" id="badge-ws">
+      <div class="dot"></div>
+      <span id="badge-ws-txt">WS</span>
+    </div>
+
+    <!-- Recording controls -->
+    <div id="rec-group">
+      <button class="btn-rec" id="btn-rec-start" title="Start Recording">● REC</button>
+      <button class="btn-rec" id="btn-rec-pause" title="Pause / Resume" disabled>⏸</button>
+      <button class="btn-rec" id="btn-rec-stop"  title="Stop Recording"  disabled>■</button>
+    </div>
+    <div id="rec-info">
+      <span class="rec-dot" id="rec-dot"></span>
+      <span id="rec-status">IDLE</span>
+      <span class="rec-sep">│</span>
+      <span id="rec-elapsed">00:00:00</span>
+    </div>
+
+    <button id="btn-menu" title="Connection Settings">⚙</button>
+  </div>
+
+  <!-- Connection drawer -->
+  <div id="conn-drawer">
+    <div class="drawer-inner">
+
+      <!-- Serial section -->
+      <div class="conn-section">
+        <h4>📡 Serial Port</h4>
+        <div class="conn-row">
+          <label>Port</label>
+          <select id="sel-port">
+            <option value="">Auto-detect</option>
+          </select>
+          <button class="btn btn-scan" id="btn-scan-ports">Scan</button>
+        </div>
+        <div class="conn-row">
+          <label>Baud</label>
+          <input id="inp-baud" type="number" value="115200" />
+        </div>
+        <div class="conn-btns">
+          <button class="btn btn-connect"    id="btn-serial-connect">Connect</button>
+          <button class="btn btn-disconnect" id="btn-serial-disconnect">Disconnect</button>
+        </div>
+      </div>
+
+      <!-- WebSocket section -->
+      <div class="conn-section">
+        <h4>🌐 WebSocket</h4>
+        <div class="conn-row">
+          <label>URL</label>
+          <input id="inp-ws-url" type="text" value="ws://localhost:8081" />
+        </div>
+        <div class="conn-row">
+          <label>Token</label>
+          <input id="inp-ws-token" type="text" placeholder="optional" />
+        </div>
+        <div class="conn-btns">
+          <button class="btn btn-connect"    id="btn-ws-connect">Connect</button>
+          <button class="btn btn-disconnect" id="btn-ws-disconnect">Disconnect</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main content grid -->
+  <div id="content">
+
+    <!-- Gauge row: CH1 CH2 CH3 -->
+    <div id="gauge-row">
+      <div class="gauge-card" id="gauge-ch1">
+        <div class="gauge-label">CH1 · ACT</div>
+        <svg class="gauge-svg" viewBox="0 0 100 56">
+          <path d="M10,50 A40,40 0 0,1 90,50" fill="none" stroke="#1e2340" stroke-width="8" stroke-linecap="round"/>
+          <path id="g1-arc" d="M10,50 A40,40 0 0,1 90,50" fill="none" stroke="#2196F3" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="125.6" stroke-dashoffset="125.6"/>
+        </svg>
+        <div class="gauge-val" id="g1-raw" style="color:#2196F3">0</div>
+        <div class="gauge-unit" id="g1-unit">ADC counts</div>
+        <div class="gauge-sub">EMA: <span id="g1-ema">0.0</span> &nbsp; Filt: <span id="g1-filt">0</span></div>
+      </div>
+
+      <div class="gauge-card" id="gauge-ch2">
+        <div class="gauge-label">CH2 · REF</div>
+        <svg class="gauge-svg" viewBox="0 0 100 56">
+          <path d="M10,50 A40,40 0 0,1 90,50" fill="none" stroke="#1e2340" stroke-width="8" stroke-linecap="round"/>
+          <path id="g2-arc" d="M10,50 A40,40 0 0,1 90,50" fill="none" stroke="#4CAF50" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="125.6" stroke-dashoffset="125.6"/>
+        </svg>
+        <div class="gauge-val" id="g2-raw" style="color:#4CAF50">0</div>
+        <div class="gauge-unit" id="g2-unit">ADC counts</div>
+        <div class="gauge-sub">EMA: <span id="g2-ema">0.0</span> &nbsp; Filt: <span id="g2-filt">0</span></div>
+      </div>
+
+      <div class="gauge-card" id="gauge-ch3">
+        <div class="gauge-label">CH3 · TEMP</div>
+        <svg class="gauge-svg" viewBox="0 0 100 56">
+          <path d="M10,50 A40,40 0 0,1 90,50" fill="none" stroke="#1e2340" stroke-width="8" stroke-linecap="round"/>
+          <path id="g3-arc" d="M10,50 A40,40 0 0,1 90,50" fill="none" stroke="#F44336" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="125.6" stroke-dashoffset="125.6"/>
+        </svg>
+        <div class="gauge-val" id="g3-raw" style="color:#F44336">0</div>
+        <div class="gauge-unit" id="g3-unit">ADC counts</div>
+        <div class="gauge-sub">EMA: <span id="g3-ema">0.0</span> &nbsp; Filt: <span id="g3-filt">0</span></div>
+      </div>
+    </div><!-- /gauge-row -->
+
+    <!-- Scrolling charts -->
+    <div id="chart-area">
+      <div class="chart-controls">
+        <span class="chart-title">Time-Series</span>
+        <label><input type="radio" name="unit" value="adc" checked> ADC Counts</label>
+        <label><input type="radio" name="unit" value="mv"> mV</label>
+        <span style="color:var(--border-hi)">|</span>
+        <label><input type="checkbox" id="chk-filt"> Show Filtered</label>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title" style="color:#2196F3">CH1 · ACT</div>
+        <canvas id="canvas-ch1"></canvas>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title" style="color:#4CAF50">CH2 · REF</div>
+        <canvas id="canvas-ch2"></canvas>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title" style="color:#F44336">CH3 · TEMP</div>
+        <canvas id="canvas-ch3"></canvas>
+      </div>
+    </div>
+
+    <!-- PROC panel -->
+    <div id="proc-panel">
+      <div class="proc-title">⚗ PROC</div>
+
+      <div class="proc-field">
+        <div class="proc-field-label">Ratio</div>
+        <div class="proc-field-val" id="proc-ratio">—</div>
+        <div class="proc-bar-wrap"><div class="proc-bar" id="bar-ratio" style="background:#2196F3;width:0%"></div></div>
+      </div>
+
+      <div class="proc-field">
+        <div class="proc-field-label">Ratio Filt</div>
+        <div class="proc-field-val" id="proc-ratio-filt">—</div>
+        <div class="proc-bar-wrap"><div class="proc-bar" id="bar-ratio-filt" style="background:#64b5f6;width:0%"></div></div>
+      </div>
+
+      <div class="proc-field">
+        <div class="proc-field-label">Response 1</div>
+        <div class="proc-field-val" id="proc-resp1">—</div>
+        <div class="proc-bar-wrap"><div class="proc-bar" id="bar-resp1" style="background:#4CAF50;width:50%"></div></div>
+      </div>
+
+      <div class="proc-field">
+        <div class="proc-field-label">Response 2</div>
+        <div class="proc-field-val" id="proc-resp2">—</div>
+        <div class="proc-bar-wrap"><div class="proc-bar" id="bar-resp2" style="background:#81c784;width:50%"></div></div>
+      </div>
+
+      <div class="proc-field">
+        <div class="proc-field-label">Baseline</div>
+        <div class="proc-field-val" id="proc-baseline">—</div>
+      </div>
+
+      <div class="proc-field">
+        <div class="proc-field-label">EMA out</div>
+        <div class="proc-field-val" id="proc-ema">—</div>
+        <div class="proc-bar-wrap"><div class="proc-bar" id="bar-ema" style="background:#9c27b0;width:0%"></div></div>
+      </div>
+
+      <div class="gas-flag" id="gas-flag">⬛ NO DATA</div>
+    </div><!-- /proc-panel -->
+
+    <!-- Log -->
+    <div id="log-area">
+      <div id="log-header">
+        <div class="log-hdr-row">
+          <span>Serial / WS Log</span>
+          <button id="btn-pause-log">⏸ Pause</button>
+          <button id="btn-clear-log">✕ Clear</button>
+        </div>
+        <!-- Recording bar -->
+        <div id="rec-bar">
+          <button class="btn-rec" id="btn-rec-start2" title="Start Recording">● REC</button>
+          <button class="btn-rec" id="btn-rec-pause2" title="Pause / Resume" disabled>⏸</button>
+          <button class="btn-rec" id="btn-rec-stop2"  title="Stop Recording"  disabled>■</button>
+          <div id="rec-bar-info">
+            <span id="rec-dot2" class="rec-dot"></span>
+            <span id="rec-status2">IDLE</span>
+            <span class="rec-sep">│</span>
+            <span id="rec-filename">—</span>
+            <span class="rec-sep">│</span>
+            <span id="rec-lines">0 lines</span>
+          </div>
+        </div>
+      </div>
+      <div id="log-scroll"></div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- Status bar -->
+  <div id="statusbar">
+    <div class="sb-item">Port: <span class="sb-val" id="sb-port">—</span></div>
+    <div class="sb-item">Baud: <span class="sb-val" id="sb-baud">—</span></div>
+    <div class="sb-item">State: <span class="sb-val" id="sb-state">DISCONNECTED</span></div>
+    <div class="sb-item">Lines: <span class="sb-val" id="sb-lines">0</span></div>
+    <div class="sb-item" id="sb-rate">Rate: <span class="sb-val" id="sb-rate-val">0 ln/s</span></div>
+  </div>
+
+</div><!-- /app -->
+
+<script src="../js/script.js"></script>
+</body>
+</html>

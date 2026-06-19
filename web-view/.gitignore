@@ -1,9 +1,7 @@
 # Node dependencies
 node_modules/
 
-resource/trash/
-resource/asset/
-resource/
+
 
 trash/
 
